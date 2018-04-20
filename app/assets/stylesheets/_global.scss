@@ -1,0 +1,45 @@
+// Global styling for this template
+
+
+body {
+}
+
+a {
+    color: theme-primary;
+    &:hover,
+    &:focus {
+        color: heme-primary, 10%;
+    }
+}
+
+hr {
+    max-width: 100px;
+    margin: 25px auto 0;
+    border-width: 1px;
+    border-color: gray-darker, .9;
+}
+
+hr.light {
+    border-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 100px 0;
+    h2 {
+        font-size: 50px;
+    }
+}

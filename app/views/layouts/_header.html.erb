@@ -1,0 +1,70 @@
+<nav class="navbar navbar-fixed-top navbar-color-on-scroll">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#">
+        <div class="logo-container">
+          <div class="logo">
+            <%if user_signed_in?%>
+            <span class="round-image-50">
+             <%= image_tag(current_user.avatar.url(:thumb)) %>
+           </span>
+           <%end%>
+         </div>
+         <div class="brand">
+          <%if user_signed_in?%>
+          <%= current_user.name  %>
+          <%end%>
+        </div>
+      </div>
+      <div class="ripple-container"></div></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation-index">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%if user_signed_in?%></li>            
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <%else%>
+        <li><%= link_to "log in", new_user_session_path%></li>
+
+        <li><%= link_to "sing up", new_user_registration_path %></li>
+        <li><%#= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
+
+        <% end%>
+        <li>
+          <a href="components-documentation.html" target="_blank">
+            <i class="material-icons"></i> Components
+            <div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: 45.4531px; top: 30px; background-color: rgb(255, 255, 255); transform: scale(17);"></div></div></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="scrollToDownload()">
+              <i class="material-icons"></i> Download
+            </a>
+          </li>
+          <li>
+          <i class="material-icons"></i><%= link_to 'Home', welcome_index_path, :onclick =>"scrollToDownload()"%> 
+          </li>
+          <li>
+            <a rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-white btn-simple btn-just-icon animated  slideInRight" data-original-title="Follow us on Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-white btn-simple btn-just-icon animated  slideInLeft" data-original-title="Like us on Facebook">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-white btn-simple btn-just-icon animated  slideInUp
+            "  data-original-title="Follow us on Instagram">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

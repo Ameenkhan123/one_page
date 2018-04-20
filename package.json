@@ -1,0 +1,7 @@
+{
+  "name": "one_page",
+  "private": true,
+  "dependencies": {
+    "aos": "^2.2.0"
+  }
+}

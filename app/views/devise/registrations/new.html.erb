@@ -1,0 +1,37 @@
+  <div class=" animated  zoomInUp">
+<div class="right">
+	<div class="panel-heading">
+		<h1 style="text-align: center;color: white">Sign Up</h1>
+	</div>
+	<div class="panel-body animated  zoomInUp">
+	      <div >
+		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
+		<div class="field form">
+			<%= f.label :image, :class => 'control-label col-lg-2 ', :style =>'color:white;font-size:15px' %><br />
+			<%= f.file_field :avatar, :style =>'color:white' %>
+		</div>
+		<div class="field form-group"">
+			<%= f.label :email, :class => 'control-label col-lg-2', :style =>'color:white;font-size:15px' %><br />
+			<%= f.email_field :email, autofocus: true, :class => 'form-control', :style =>"color:white" %>
+		</div>
+		<div class="field form-group">
+			<%= f.label :password, :class => 'control-label col-lg-2', :style =>'color:white;font-size:15px' %>
+			<% if @minimum_password_length %>
+			<em>(<%= @minimum_password_length %> characters minimum)</em>
+			<% end %><br />
+			<%= f.password_field :password, autocomplete: "off", :class => 'form-control', :style =>'color:white' %>
+		</div>
+		<div class="field form-group">
+			<%= f.label :password_confirmation, :class => 'control-label col-lg-2', :style =>'color:white;font-size:115x' %><br />
+			<%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+		</div>
+		<div class="actions form-group">
+			<%= f.submit "Sign up", :class => 'form-control', :style =>'color:white' %>
+		</div>
+		<% end %>
+		<button class="social-signin facebook">Log in with facebook</button>
+		<button class="social-signin twitter">Log in with Twitter</button>
+		<button class="social-signin google">Log in with Google+</button>
+	</div>
+</div>
